@@ -1,0 +1,39 @@
+[
+    {
+        "id": 0,
+        "teksti": "<a href=\"#\">Jaana Toivari-Viitala (puheenjohtaja)</a>"
+    },
+    {
+        "id": 1,
+        "teksti": "<a href='#'>Kati Marttinen (sihteeri)</a>"
+    },
+    {
+        "id": 2,
+        "teksti": "<a href=\"#\">Patricia Berg (varapuheenjohtaja)</a>"
+    },
+    {
+        "id": 3,
+        "teksti": "<a href='#'>Heidi Jauhiainen (taloudenhoitaja)</a>"
+    },
+    {
+        "id": 4,
+        "teksti": "<a href=\"#\">Pirjo Lapinkivi</a>"
+    },
+    {
+        "id": 5,
+        "teksti": "<a href=\"#\">Antti Marjanen</a>"
+    },
+    {
+        "id": 6,
+        "teksti": "<a href=\"#\">Sari Nieminen</a>"
+    },
+    {
+        "id": 7,
+        "teksti": "<a href=\"#\">Sebastian Porceddu</a>"
+    },
+    {
+        "id": 8,
+        "teksti": "<a href=\"#\">Hindrik Strandberg</a>"
+    }
+]
+

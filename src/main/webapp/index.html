@@ -1,0 +1,109 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Egyptologinen Seura</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/bootstrap-responsive.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="tyyli.css"/>
+    </head>
+    <body>
+        <header>
+            <div><h1><img src="kuvat/logoindex.gif" width="100" id="logo"/>Suomen Egyptologinen Seura ry</h1></div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Seura</a></li>
+                    <li><a href="#">Jäsenyys</a></li>
+                    <li><a href="#">Toiminta</a></li>
+                    <li><a href="#">Egyptologia</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <section id="vartalo">
+            <div class="container-fluid" id="main">
+                <div class="row-fluid">
+                    <div class="span9" id="mainspan">
+                        <div class="span12" id="mainTekstispan">
+                            <div class="span12" id="tekstispan">
+                                <article id="tekstit">
+                
+                                </article>
+                            </div>
+                            <div class="piilossa" id="kuvaspan">
+                                <article id="kuva">
+                
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="span3" style="min-width: 200px" id="sivuspan">
+                        <div class="row-fluid">
+                            <div class="span12" id="valikkospan">
+                                <article id="sivuvalikko">
+                
+                                </article>
+                            </div>
+                        </div>
+                        <div class="row-fluid">
+                            <div class="span12">
+                                <article id="osoite">
+                                    
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <article id="ala"></article>
+        </footer>
+        
+        <script id="teksti-template" type="text/html">
+            <h4>{{otsikko}}</h4>
+            {{#list}}
+            <p data-id="{{id}}">{{{teksti}}}</p>
+            {{/list}}
+        </script>
+        
+        <script id="kuva-template" type="text/html">
+            {{#kuvat}}
+            <p><img src="{{kuva}}" width="200"></p>
+            {{/kuvat}}
+        </script>
+        
+        <script id="sivu-template" type="text/html">
+            <nav>
+                <ul>
+                    <li><a href="#" id="seura">Tietoa seurasta</a></li>
+                    <li><a href="#" id="historia">Seuran historia</a></li>
+                    <li><a href="#" id="hallitus">Hallitus</a></li>
+                    <li><a href="#" id="saannot">Seuran säännöt</a></li>
+                </ul>
+            </nav>
+        </script>
+        
+        <script id="osoite-template" type="text/html">
+            <p>{{{osoite}}}</p>
+        </script>
+        
+        <script id="footer-template" type="text/html">
+            <p>{{{copyright}}}</p>
+        </script>
+        
+        <script src="jquery-1.8.2.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="mustache.js"></script>
+        <script src="underscore-min.js"></script>
+        <script src="backbone-min.js"></script>
+        <script src="koodi.js"></script>
+    </body>
+</html>

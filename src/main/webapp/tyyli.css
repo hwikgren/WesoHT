@@ -1,0 +1,135 @@
+html { background: transparent;}
+
+header div {
+    background-color: #FFFFFA;
+
+    border-radius: 0.625em;
+    -moz-border-radius: 0.625em;
+    -webkit-border-radius: 0.625em;
+    padding: 5px 1.5em;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+    margin-top: 1.5em;
+    text-align: center;
+}
+
+body {
+    font-family: 'Trebuchet MS', Trebuchet, Arial, sans-serif;
+    background-color: #FFEDCA;
+    min-height: 100%
+}
+
+header h1 {
+    color: rgb(73, 69, 69);
+}
+
+nav ul li {
+    list-style-type: none;
+    
+}
+
+nav ul li a {
+    text-decoration: none;
+}
+
+header nav ul {
+    /* fontin koon ym m��rittely�.. */
+    font-size: 1.2em;
+    height: 40px;
+    line-height: 30px;
+    margin: 0 auto 2em auto;
+
+    /* taustav�riksi h1-elementin taustav�ri */
+    background-color: #FFEDCA;
+
+    text-align: center;
+    
+}
+
+header nav ul li {
+
+    display: inline; 
+}
+
+header nav ul li a {
+    color: rgb(150, 150, 150);
+    display: inline-block;
+    padding: 5px 1.5em;
+    -moz-border-radius-bottomright: 0.625em;
+    -webkit-border-bottom-right-radius: 0.625em;
+    border-bottom-right-radius: 0.625em;
+    -moz-border-radius-bottomleft: 0.625em;
+    -webkit-border-bottom-left-radius: 0.625em;
+    border-bottom-left-radius: 0.625em;
+    
+}
+
+header nav ul li a:hover {
+    background-color: #FFFFFA;
+    color: rgb(73, 69, 69);
+    text-decoration: none;
+}
+
+#mainTekstispan, #sivuvalikko, #osoite {
+    background-color: #FFFFFA;
+    padding: 1em;
+    padding-left: 2em;
+    margin: 0.5em;
+    border-radius: 0.625em;
+    -moz-border-radius: 0.625em;
+    -webkit-border-radius: 0.625em;
+
+}
+
+.piilossa {
+    display: none;
+}
+
+a.kaytossa {
+    color: #953b39;
+}
+
+#sivuvalikko a.kaytossa:hover {
+    text-decoration: none;
+}
+
+@media(max-width: 900px) {
+    h1 {
+        font-size: 2em;
+    }
+}
+
+@media(max-width: 600px) {
+    h1 {
+        font-size: 1.7em;
+    }
+    p {
+        font-size: 1em;
+    }
+    header nav {
+        font-size: 0.875em;
+    }
+    #logo {
+        display: none;
+    }
+}
+
+@media(max-width: 480px) {
+    h1 {
+        font-size: 1.5em;
+    }
+    p {
+        font-size: 0.875em;
+    }
+    header nav {
+        font-size: 0.6em;
+    }
+    
+}
+footer {
+    padding-left: 5em;
+    font-size: 0.9em;
+    line-height: 15px;
+}
+
+
