@@ -93,10 +93,11 @@ a.kaytossa {
     text-decoration: none;
 }
 
-@media(max-width: 900px) {
+@media(max-width: 1200px) {
     h1 {
         font-size: 2em;
     }
+    
 }
 
 @media(max-width: 600px) {

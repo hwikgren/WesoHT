@@ -5,6 +5,7 @@ var otsikko;
 var kuvat;
 var naytettavaKuva;
 var osoite;
+var etusivu;
 
 var sivu = {
     model: {},
@@ -20,7 +21,7 @@ sivu.view.NavigaatioView = Backbone.View.extend({
             "copyright": oikeudet
         } 
         $("#ala").html(Mustache.render($("#footer-template").html(), alareuna));
-        
+        etusivu = true;
         new sivu.view.EtusivuView();
     },
     events: {
@@ -32,6 +33,7 @@ sivu.view.NavigaatioView = Backbone.View.extend({
         
     },
     jasenyys: function(eventInfo) {
+        etusivu = false;
         eventInfo.preventDefault();
         $.getJSON("jasen.json", function(palautus) {
             new sivu.view.JasenView({
@@ -41,6 +43,7 @@ sivu.view.NavigaatioView = Backbone.View.extend({
         varjaaTab(1);
     },
     toiminta: function(eventInfo) {
+        etusivu = false;
         eventInfo.preventDefault();
         $.getJSON("esitelmat.json", function(palautus) {
             new sivu.view.ToimintaView({
@@ -95,6 +98,16 @@ sivu.view.EtusivuView = Backbone.View.extend({
 sivu.view.SeuraView = Backbone.View.extend({
     el: $("#main"),
     initialize: function() {
+        console.log("päästiin");
+        $(window).resize(function() {
+        if (etusivu == true && window.innerWidth > 950) {
+            muutaKokoa(8, 9, 4, 3);
+        }
+        else if (etusivu == true) {
+            muutaKokoa(9, 8, 3, 4);
+            
+        }
+    });
         this.render();
     },
     events: {
@@ -169,12 +182,14 @@ sivu.view.JasenView = Backbone.View.extend({
             "otsikko": "Seuran jäsenyys",
             "list": this.model
         }
+        $("#mainspan").removeClass("span8");
         $("#mainspan").removeClass("span9");
         $("#mainspan").addClass("span12");
         $("#tekstispan").removeClass("span6");
         $("#tekstispan").addClass("span12");
         $("#kuvaspan").removeClass("span6");
         $("#kuvaspan").addClass("piilossa");
+        $("#sivuspan").removeClass("span4");
         $("#sivuspan").removeClass("span3");
         $("#sivuspan").addClass("piilossa");
         $("#tekstit").html(Mustache.render($("#teksti-template").html(), tekstit));
@@ -194,13 +209,13 @@ sivu.view.ToimintaView = Backbone.View.extend({
             list: this.model
         }
         $("#mainspan").removeClass("span12");
-        $("#mainspan").addClass("span9");
+        $("#mainspan").addClass("span8");
         $("#tekstispan").removeClass("span6");
         $("#tekstispan").addClass("span12");
         $("#kuvaspan").removeClass("span6");
         $("#kuvaspan").addClass("piilossa");
         $("#sivuspan").removeClass("piilossa");
-        $("#sivuspan").addClass("span3");
+        $("#sivuspan").addClass("span4");
         $("#valikkospan").removeClass("span12");
         $("#sivuvalikko").addClass("piilossa");
         $("#tekstit").html(Mustache.render($("#teksti-template").html(), tekstit));
@@ -229,8 +244,20 @@ function varjaaTab(index) {
     $("header nav ul li a:eq("+index+")").addClass("kaytossa");
 }
 
+function muutaKokoa(eka, toka, kolmas, neljas) {
+    $("#mainspan").removeClass("span"+eka);
+    $("#mainspan").addClass("span"+toka);
+    $("#sivuspan").removeClass("span"+kolmas);
+    $("#sivuspan").addClass("span"+neljas);
+}
+
 
 $(document).ready(function() {
+    if (window.innerWidth > 950) {
+        muutaKokoa(8, 9, 4, 3);
+    }
+    
+    
     new sivu.view.NavigaatioView({});
     
 });
